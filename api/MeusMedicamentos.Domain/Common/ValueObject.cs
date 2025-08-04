@@ -10,7 +10,7 @@ public abstract class ValueObject : IEquatable<ValueObject>
     /// <summary>
     /// Retorna os componentes que definem a igualdade do Value Object
     /// </summary>
-    protected abstract IEnumerable<object?> ObterComponentesDeIgualdade();
+    protected abstract IEnumerable<object?> GetEqualityComponents();
 
     /// <summary>
     /// Verifica se o Value Object é igual a outro
@@ -19,7 +19,7 @@ public abstract class ValueObject : IEquatable<ValueObject>
     {
         return other is not null &&
                GetType() == other.GetType() &&
-               ObterComponentesDeIgualdade().SequenceEqual(other.ObterComponentesDeIgualdade());
+               GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
     }
 
     /// <summary>
@@ -35,7 +35,7 @@ public abstract class ValueObject : IEquatable<ValueObject>
     /// </summary>
     public override int GetHashCode()
     {
-        return ObterComponentesDeIgualdade()
+        return GetEqualityComponents()
             .Where(x => x != null)
             .Aggregate(1, (current, obj) => current * 23 + obj!.GetHashCode());
     }
