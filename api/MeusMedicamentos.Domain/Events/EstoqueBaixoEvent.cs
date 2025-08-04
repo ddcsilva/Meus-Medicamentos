@@ -1,5 +1,5 @@
 using MeusMedicamentos.Domain.Entities.Ids;
-using MeusMedicamentos.Domain.Interfaces;
+using MeusMedicamentos.Domain.Common;
 
 namespace MeusMedicamentos.Domain.Events;
 

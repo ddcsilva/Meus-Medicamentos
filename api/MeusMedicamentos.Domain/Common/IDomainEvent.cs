@@ -1,4 +1,4 @@
-namespace MeusMedicamentos.Domain.Interfaces;
+namespace MeusMedicamentos.Domain.Common;
 
 /// <summary>
 /// Interface para eventos de domínio.

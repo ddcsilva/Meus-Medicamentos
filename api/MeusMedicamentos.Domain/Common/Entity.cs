@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
-using MeusMedicamentos.Domain.Interfaces;
+using MeusMedicamentos.Domain.Common;
 
 namespace MeusMedicamentos.Domain.Common;
 
