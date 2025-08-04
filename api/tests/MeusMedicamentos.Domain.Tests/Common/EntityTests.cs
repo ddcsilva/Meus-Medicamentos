@@ -161,6 +161,20 @@ public class EntityTests
     }
 
     [Fact]
+    public void Equals_DeveRetornarFalse_QuandoObjetoNaoForDoTipoEsperado()
+    {
+        // Arrange
+        var entity = new FakeEntity(1);
+        var outroObjeto = new object();
+
+        // Act
+        var resultado = entity.Equals(outroObjeto);
+
+        // Assert
+        resultado.Should().BeFalse();
+    }
+
+    [Fact]
     public void OperadorIgualdade_DeveRetornarTrue_ParaEntidadesComMesmoId()
     {
         // Arrange
