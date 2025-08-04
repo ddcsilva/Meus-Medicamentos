@@ -124,4 +124,32 @@ public class ValueObjectTests
         // Assert
         result.Should().BeFalse();
     }
+
+    [Fact]
+    public void Equals_QuandoObjetoNaoEValueObject_DeveRetornarFalse()
+    {
+        // Arrange
+        var obj1 = new TestValueObject(1, "Teste");
+        object obj2 = "uma string qualquer";
+
+        // Act
+        var result = obj1.Equals(obj2);
+
+        // Assert
+        result.Should().BeFalse();
+    }
+
+    [Fact]
+    public void Equals_QuandoObjetoENull_DeveRetornarFalse()
+    {
+        // Arrange
+        var obj1 = new TestValueObject(1, "Teste");
+        object? obj2 = null;
+
+        // Act
+        var result = obj1.Equals(obj2);
+
+        // Assert
+        result.Should().BeFalse();
+    }
 }

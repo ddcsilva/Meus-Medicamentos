@@ -220,4 +220,18 @@ public class EntityTests
         // Assert
         hash1.Should().Be(hash2);
     }
+
+    [Fact]
+    public void Equals_DeveRetornarFalse_QuandoEntidadeForNull()
+    {
+        // Arrange
+        var entity = new FakeEntity(1);
+        FakeEntity? outraEntity = null;
+
+        // Act
+        var resultado = entity.Equals(outraEntity);
+
+        // Assert
+        resultado.Should().BeFalse();
+    }
 }
